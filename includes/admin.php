@@ -7,7 +7,15 @@ add_action( 'admin_menu', 'esms_admin_menu' );
 add_action( 'admin_init', 'esms_register_settings' );
 
 function esms_admin_menu(): void {
-    add_options_page( 'EWEB Smart Meetings', 'EWEB Meetings', 'manage_options', 'esms-settings', 'esms_render_settings_page' );
+    add_menu_page(
+        'EWEB Smart Meetings',
+        'EWEB Meetings',
+        'manage_options',
+        'esms-settings',
+        'esms_render_settings_page',
+        'dashicons-calendar-alt',
+        25
+    );
 }
 
 function esms_register_settings(): void {
